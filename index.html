@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form id="formulario" action="#" method="POST" novalidate>
+        <div class="campo">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <span class="error-mensaje" id="error-nombre"></span>
+        </div>
+
+        <div class="campo">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+            <span class="error-mensaje" id="error-correo"></span>
+        </div>
+
+        <div class="campo">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <span class="error-mensaje" id="error-mensaje"></span>
+        </div>
+
+        <button type="submit" id="btn-enviar">Enviar</button>
+
+        <!-- Mensaje general de estado (éxito o error de envío) -->
+        <div id="estado-envio" class="estado-envio"></div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
