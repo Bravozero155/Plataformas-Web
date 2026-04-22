@@ -1,0 +1,15 @@
+{
+  "name": "cib302-semana5-https",
+  "version": "1.0.0",
+  "description": "Servidor HTTPS con Express y certificado SSL auto-firmado - CIB302 Semana 5",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "generate-cert": "openssl req -x509 -newkey rsa:2048 -keyout certs/private.key -out certs/certificate.crt -days 365 -nodes -subj '/C=CL/ST=Chile/L=Santiago/O=AIEP/OU=CIB302/CN=localhost'"
+  },
+  "author": "Pablo Martin Hartwig",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
