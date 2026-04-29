@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportyStyle - Tienda Deportiva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-brand">
+            <h1>⚡ SportyStyle</h1>
+            <span class="tagline">Ropa deportiva de alto rendimiento</span>
+        </div>
+        <div class="navbar-actions">
+            <div id="user-info" class="user-info" style="display:none;">
+                <span id="welcome-msg"></span>
+                <button id="btn-logout" class="btn btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+            </div>
+            <button id="btn-login" class="btn btn-login" onclick="iniciarSesion()">Iniciar Sesión</button>
+            <button class="btn btn-cart" onclick="toggleCarrito()">
+                🛒 Carrito (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <!-- CARRITO LATERAL -->
+    <aside id="carrito-panel" class="carrito-panel">
+        <div class="carrito-header">
+            <h2>🛒 Mi Carrito</h2>
+            <button class="btn-close" onclick="toggleCarrito()">✕</button>
+        </div>
+        <div id="carrito-items" class="carrito-items">
+            <p class="carrito-vacio">Tu carrito está vacío</p>
+        </div>
+        <div class="carrito-footer">
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span id="carrito-total-precio">$0</span>
+            </div>
+            <button id="btn-checkout" class="btn btn-checkout" onclick="irAlCheckout()" disabled>
+                Proceder al Pago
+            </button>
+        </div>
+    </aside>
+    <div id="overlay" class="overlay" onclick="toggleCarrito()"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- SECCIÓN CATÁLOGO -->
+        <section id="seccion-catalogo" class="seccion-catalogo">
+            <h2 class="seccion-titulo">Nuestros Productos</h2>
+
+            <!-- Categoría: Camisetas -->
+            <h3 class="categoria-titulo">🏋️ Camisetas Deportivas</h3>
+            <div class="productos-grid" id="grid-camisetas"></div>
+
+            <!-- Categoría: Pantalones -->
+            <h3 class="categoria-titulo">🏃 Pantalones Deportivos</h3>
+            <div class="productos-grid" id="grid-pantalones"></div>
+
+            <!-- Categoría: Accesorios -->
+            <h3 class="categoria-titulo">🎒 Accesorios de Deporte</h3>
+            <div class="productos-grid" id="grid-accesorios"></div>
+        </section>
+
+        <!-- SECCIÓN CHECKOUT -->
+        <section id="seccion-checkout" class="seccion-checkout" style="display:none;">
+            <h2 class="seccion-titulo">Datos de Pago y Envío</h2>
+            <div class="checkout-container">
+                <div class="checkout-resumen">
+                    <h3>Resumen del Pedido</h3>
+                    <div id="checkout-items"></div>
+                    <div class="checkout-total">
+                        <strong>Total: <span id="checkout-total-precio">$0</span></strong>
+                    </div>
+                </div>
+                <form id="form-pago" class="form-pago" onsubmit="procesarPago(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required minlength="3"
+                               placeholder="Ej: Pablo Martín">
+                        <span class="error-msg" id="error-nombre"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección de Envío</label>
+                        <input type="text" id="direccion" name="direccion" required minlength="5"
+                               placeholder="Ej: Av. Libertador 1234, Santiago">
+                        <span class="error-msg" id="error-direccion"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required
+                               placeholder="Ej: correo@gmail.com">
+                        <span class="error-msg" id="error-email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required
+                               placeholder="Ej: 912345678" maxlength="12">
+                        <span class="error-msg" id="error-telefono"></span>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="volverAlCatalogo()">
+                            ← Volver a la Tienda
+                        </button>
+                        <button type="submit" class="btn btn-checkout">
+                            Confirmar Compra
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONFIRMACIÓN -->
+        <section id="seccion-confirmacion" class="seccion-confirmacion" style="display:none;">
+            <div class="confirmacion-card">
+                <div class="confirmacion-icon">✅</div>
+                <h2>¡Gracias por tu compra!</h2>
+                <p>Tu pedido ha sido procesado exitosamente.</p>
+                <div id="confirmacion-detalle" class="confirmacion-detalle"></div>
+                <button class="btn btn-login" onclick="nuevaCompra()">Seguir Comprando</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 SportyStyle - Tienda Virtual | Actividad Semana 6 - CIB302</p>
+    </footer>
+
+    <!-- Auth0 SPA SDK desde CDN -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
