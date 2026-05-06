@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f2f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e6ed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="frontGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="backGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="secGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="instrGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#bgGrad)" rx="0"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" font-size="24" font-weight="bold" fill="#1a1a2e">Diagrama de Arquitectura - TechStore</text>
+  <text x="600" y="68" text-anchor="middle" font-size="13" fill="#666">Plataforma de Gestión de Inventario, Transacciones y Usuarios | CIB302 - Semana 7</text>
+
+  <!-- ==================== CAPA FRONTEND ==================== -->
+  <rect x="30" y="90" width="340" height="280" rx="12" fill="white" stroke="#3498db" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="90" width="340" height="38" rx="12" fill="url(#frontGrad)"/>
+  <rect x="30" y="110" width="340" height="18" fill="url(#frontGrad)"/>
+  <text x="200" y="115" text-anchor="middle" font-size="16" font-weight="bold" fill="white">FRONTEND (Cliente)</text>
+
+  <text x="50" y="152" font-size="12" font-weight="bold" fill="#2c3e50">Navegador Web del Usuario</text>
+  <text x="50" y="172" font-size="11" fill="#555">&#8226; HTML5 / CSS3 / JavaScript</text>
+  <text x="50" y="190" font-size="11" fill="#555">&#8226; Catálogo de productos</text>
+  <text x="50" y="208" font-size="11" fill="#555">&#8226; Carrito de compras (Session Storage)</text>
+  <text x="50" y="226" font-size="11" fill="#555">&#8226; Formulario de pago con validaciones</text>
+  <text x="50" y="244" font-size="11" fill="#555">&#8226; Autenticación Auth0 (OAuth 2.0 / JWT)</text>
+  
+  <rect x="50" y="258" width="300" height="44" rx="6" fill="#eaf2f8" stroke="#3498db" stroke-width="1"/>
+  <text x="200" y="276" text-anchor="middle" font-size="10" font-weight="bold" fill="#2980b9">Validaciones del lado cliente:</text>
+  <text x="200" y="292" text-anchor="middle" font-size="10" fill="#555">Formato email, teléfono, campos requeridos, XSS sanitize</text>
+
+  <rect x="50" y="310" width="300" height="44" rx="6" fill="#eaf2f8" stroke="#3498db" stroke-width="1"/>
+  <text x="200" y="328" text-anchor="middle" font-size="10" font-weight="bold" fill="#2980b9">Protocolos:</text>
+  <text x="200" y="344" text-anchor="middle" font-size="10" fill="#555">HTTPS (TLS 1.3) | CORS | CSP Headers</text>
+
+  <!-- ==================== CAPA BACKEND ==================== -->
+  <rect x="430" y="90" width="340" height="280" rx="12" fill="white" stroke="#27ae60" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="430" y="90" width="340" height="38" rx="12" fill="url(#backGrad)"/>
+  <rect x="430" y="110" width="340" height="18" fill="url(#backGrad)"/>
+  <text x="600" y="115" text-anchor="middle" font-size="16" font-weight="bold" fill="white">BACKEND (Servidor)</text>
+
+  <text x="450" y="152" font-size="12" font-weight="bold" fill="#2c3e50">API REST - Node.js / Express</text>
+  <text x="450" y="172" font-size="11" fill="#555">&#8226; Rutas: /api/productos, /api/usuarios</text>
+  <text x="450" y="190" font-size="11" fill="#555">&#8226; Ruta: /api/transacciones, /api/inventario</text>
+  <text x="450" y="208" font-size="11" fill="#555">&#8226; Middleware de autenticación JWT</text>
+  <text x="450" y="226" font-size="11" fill="#555">&#8226; Rate limiting y logging</text>
+  <text x="450" y="244" font-size="11" fill="#555">&#8226; Helmet.js (headers de seguridad)</text>
+
+  <rect x="450" y="258" width="300" height="44" rx="6" fill="#eafaf1" stroke="#27ae60" stroke-width="1"/>
+  <text x="600" y="276" text-anchor="middle" font-size="10" font-weight="bold" fill="#27ae60">Validaciones del lado servidor:</text>
+  <text x="600" y="292" text-anchor="middle" font-size="10" fill="#555">Consultas parametrizadas, sanitización, escape de datos</text>
+
+  <rect x="450" y="310" width="300" height="44" rx="6" fill="#eafaf1" stroke="#27ae60" stroke-width="1"/>
+  <text x="600" y="328" text-anchor="middle" font-size="10" font-weight="bold" fill="#27ae60">ORM/Driver:</text>
+  <text x="600" y="344" text-anchor="middle" font-size="10" fill="#555">Sequelize / pg (consultas parametrizadas nativas)</text>
+
+  <!-- ==================== CAPA BASE DE DATOS ==================== -->
+  <rect x="830" y="90" width="340" height="280" rx="12" fill="white" stroke="#e74c3c" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="830" y="90" width="340" height="38" rx="12" fill="url(#dbGrad)"/>
+  <rect x="830" y="110" width="340" height="18" fill="url(#dbGrad)"/>
+  <text x="1000" y="115" text-anchor="middle" font-size="16" font-weight="bold" fill="white">BASE DE DATOS (SQL)</text>
+
+  <text x="850" y="152" font-size="12" font-weight="bold" fill="#2c3e50">PostgreSQL (Relacional)</text>
+  <text x="850" y="172" font-size="11" fill="#555">&#8226; Tabla: usuarios (id, nombre, email, hash)</text>
+  <text x="850" y="190" font-size="11" fill="#555">&#8226; Tabla: productos (id, nombre, precio, stock)</text>
+  <text x="850" y="208" font-size="11" fill="#555">&#8226; Tabla: transacciones (id, usuario_id, total)</text>
+  <text x="850" y="226" font-size="11" fill="#555">&#8226; Tabla: detalle_transaccion (producto_id, qty)</text>
+  <text x="850" y="244" font-size="11" fill="#555">&#8226; Integridad referencial con FK</text>
+
+  <rect x="850" y="258" width="300" height="44" rx="6" fill="#fdedec" stroke="#e74c3c" stroke-width="1"/>
+  <text x="1000" y="276" text-anchor="middle" font-size="10" font-weight="bold" fill="#c0392b">Justificación SQL:</text>
+  <text x="1000" y="292" text-anchor="middle" font-size="10" fill="#555">Datos estructurados, transacciones ACID, integridad ref.</text>
+
+  <rect x="850" y="310" width="300" height="44" rx="6" fill="#fdedec" stroke="#e74c3c" stroke-width="1"/>
+  <text x="1000" y="328" text-anchor="middle" font-size="10" font-weight="bold" fill="#c0392b">Propiedades ACID:</text>
+  <text x="1000" y="344" text-anchor="middle" font-size="10" fill="#555">Atomicidad, Consistencia, Aislamiento, Durabilidad</text>
+
+  <!-- ==================== FLECHAS DE FLUJO ==================== -->
+  <!-- Frontend -> Backend -->
+  <line x1="370" y1="200" x2="430" y2="200" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+  <text x="400" y="190" text-anchor="middle" font-size="9" fill="#2c3e50" font-weight="bold">HTTPS</text>
+  <text x="400" y="215" text-anchor="middle" font-size="9" fill="#2c3e50">API REST</text>
+
+  <!-- Backend -> Database -->
+  <line x1="770" y1="200" x2="830" y2="200" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+  <text x="800" y="190" text-anchor="middle" font-size="9" fill="#2c3e50" font-weight="bold">TCP/SSL</text>
+  <text x="800" y="215" text-anchor="middle" font-size="9" fill="#2c3e50">Queries</text>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+    </marker>
+  </defs>
+
+  <!-- ==================== SEGURIDAD EN TRANSACCIONES ==================== -->
+  <rect x="30" y="400" width="565" height="225" rx="12" fill="white" stroke="#f39c12" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="400" width="565" height="38" rx="12" fill="url(#secGrad)"/>
+  <rect x="30" y="420" width="565" height="18" fill="url(#secGrad)"/>
+  <text x="312" y="425" text-anchor="middle" font-size="16" font-weight="bold" fill="white">SEGURIDAD EN LAS TRANSACCIONES</text>
+
+  <!-- Riesgos -->
+  <text x="50" y="462" font-size="13" font-weight="bold" fill="#e67e22">Riesgos Identificados:</text>
+  <rect x="50" y="472" width="250" height="32" rx="5" fill="#fff3e0" stroke="#f39c12" stroke-width="1"/>
+  <text x="175" y="493" text-anchor="middle" font-size="11" fill="#e65100">1. Inyección SQL</text>
+  <rect x="50" y="510" width="250" height="32" rx="5" fill="#fff3e0" stroke="#f39c12" stroke-width="1"/>
+  <text x="175" y="531" text-anchor="middle" font-size="11" fill="#e65100">2. Fraude en transacciones de pago</text>
+  <rect x="50" y="548" width="250" height="32" rx="5" fill="#fff3e0" stroke="#f39c12" stroke-width="1"/>
+  <text x="175" y="569" text-anchor="middle" font-size="11" fill="#e65100">3. Cross-Site Scripting (XSS)</text>
+  <rect x="50" y="586" width="250" height="32" rx="5" fill="#fff3e0" stroke="#f39c12" stroke-width="1"/>
+  <text x="175" y="607" text-anchor="middle" font-size="11" fill="#e65100">4. Man-in-the-Middle (MitM)</text>
+
+  <!-- Medidas -->
+  <text x="330" y="462" font-size="13" font-weight="bold" fill="#27ae60">Medidas de Protección:</text>
+  <rect x="330" y="472" width="250" height="32" rx="5" fill="#e8f5e9" stroke="#27ae60" stroke-width="1"/>
+  <text x="455" y="493" text-anchor="middle" font-size="11" fill="#1b5e20">&#10003; Consultas parametrizadas ($1, $2)</text>
+  <rect x="330" y="510" width="250" height="32" rx="5" fill="#e8f5e9" stroke="#27ae60" stroke-width="1"/>
+  <text x="455" y="531" text-anchor="middle" font-size="11" fill="#1b5e20">&#10003; Validación backend + tokens JWT</text>
+  <rect x="330" y="548" width="250" height="32" rx="5" fill="#e8f5e9" stroke="#27ae60" stroke-width="1"/>
+  <text x="455" y="569" text-anchor="middle" font-size="11" fill="#1b5e20">&#10003; Sanitización input + CSP headers</text>
+  <rect x="330" y="586" width="250" height="32" rx="5" fill="#e8f5e9" stroke="#27ae60" stroke-width="1"/>
+  <text x="455" y="607" text-anchor="middle" font-size="11" fill="#1b5e20">&#10003; HTTPS (TLS 1.3) cifrado E2E</text>
+
+  <!-- ==================== INSTRUCCIONES BD ==================== -->
+  <rect x="610" y="400" width="560" height="225" rx="12" fill="white" stroke="#9b59b6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="610" y="400" width="560" height="38" rx="12" fill="url(#instrGrad)"/>
+  <rect x="610" y="420" width="560" height="18" fill="url(#instrGrad)"/>
+  <text x="890" y="425" text-anchor="middle" font-size="16" font-weight="bold" fill="white">TIPOS DE INSTRUCCIONES SQL</text>
+
+  <!-- DDL -->
+  <rect x="630" y="452" width="165" height="160" rx="8" fill="#f3e5f5" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="712" y="472" text-anchor="middle" font-size="13" font-weight="bold" fill="#7b1fa2">DDL</text>
+  <text x="712" y="488" text-anchor="middle" font-size="9" fill="#7b1fa2">Data Definition Language</text>
+  <line x1="650" y1="495" x2="775" y2="495" stroke="#ce93d8" stroke-width="1"/>
+  <text x="640" y="514" font-size="10" fill="#4a148c">CREATE TABLE</text>
+  <text x="640" y="530" font-size="10" fill="#4a148c">ALTER TABLE</text>
+  <text x="640" y="546" font-size="10" fill="#4a148c">DROP TABLE</text>
+  <text x="640" y="562" font-size="10" fill="#4a148c">CREATE INDEX</text>
+  <text x="640" y="582" font-size="9" fill="#888">Estructura y esquema</text>
+  <text x="640" y="598" font-size="9" fill="#888">de la base de datos</text>
+
+  <!-- DML -->
+  <rect x="808" y="452" width="165" height="160" rx="8" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="890" y="472" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">DML</text>
+  <text x="890" y="488" text-anchor="middle" font-size="9" fill="#2e7d32">Data Manipulation Language</text>
+  <line x1="828" y1="495" x2="953" y2="495" stroke="#a5d6a7" stroke-width="1"/>
+  <text x="818" y="514" font-size="10" fill="#1b5e20">SELECT (consultas)</text>
+  <text x="818" y="530" font-size="10" fill="#1b5e20">INSERT (nuevos datos)</text>
+  <text x="818" y="546" font-size="10" fill="#1b5e20">UPDATE (modificar)</text>
+  <text x="818" y="562" font-size="10" fill="#1b5e20">DELETE (eliminar)</text>
+  <text x="818" y="582" font-size="9" fill="#888">Operaciones CRUD</text>
+  <text x="818" y="598" font-size="9" fill="#888">sobre los datos</text>
+
+  <!-- DCL -->
+  <rect x="986" y="452" width="165" height="160" rx="8" fill="#fff3e0" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="1068" y="472" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">DCL</text>
+  <text x="1068" y="488" text-anchor="middle" font-size="9" fill="#e65100">Data Control Language</text>
+  <line x1="1006" y1="495" x2="1131" y2="495" stroke="#ffcc80" stroke-width="1"/>
+  <text x="996" y="514" font-size="10" fill="#bf360c">GRANT (permisos)</text>
+  <text x="996" y="530" font-size="10" fill="#bf360c">REVOKE (revocar)</text>
+  <text x="996" y="546" font-size="10" fill="#bf360c">BEGIN TRANSACTION</text>
+  <text x="996" y="562" font-size="10" fill="#bf360c">COMMIT / ROLLBACK</text>
+  <text x="996" y="582" font-size="9" fill="#888">Control de acceso</text>
+  <text x="996" y="598" font-size="9" fill="#888">y transacciones</text>
+
+  <!-- ==================== RELACIÓN DECISIONES-REQUERIMIENTOS ==================== -->
+  <rect x="30" y="650" width="1140" height="105" rx="12" fill="white" stroke="#1a1a2e" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="650" width="1140" height="35" rx="12" fill="#1a1a2e"/>
+  <rect x="30" y="668" width="1140" height="17" fill="#1a1a2e"/>
+  <text x="600" y="674" text-anchor="middle" font-size="15" font-weight="bold" fill="white">RELACIÓN: DECISIONES TÉCNICAS ↔ REQUERIMIENTOS DEL CASO</text>
+
+  <!-- Col 1 -->
+  <text x="60" y="710" font-size="11" font-weight="bold" fill="#2980b9">Gestión de Usuarios</text>
+  <text x="60" y="726" font-size="10" fill="#555">→ Auth0 + JWT + tabla usuarios</text>
+  <text x="60" y="742" font-size="10" fill="#555">→ DCL: GRANT permisos por rol</text>
+
+  <!-- Col 2 -->
+  <text x="330" y="710" font-size="11" font-weight="bold" fill="#27ae60">Catálogo de Productos</text>
+  <text x="330" y="726" font-size="10" fill="#555">→ SQL relacional: productos + categorías</text>
+  <text x="330" y="742" font-size="10" fill="#555">→ DML: SELECT, INSERT, UPDATE stock</text>
+
+  <!-- Col 3 -->
+  <text x="620" y="710" font-size="11" font-weight="bold" fill="#e74c3c">Transacciones de Pago</text>
+  <text x="620" y="726" font-size="10" fill="#555">→ ACID garantiza integridad del pago</text>
+  <text x="620" y="742" font-size="10" fill="#555">→ DCL: BEGIN, COMMIT, ROLLBACK</text>
+
+  <!-- Col 4 -->
+  <text x="900" y="710" font-size="11" font-weight="bold" fill="#f39c12">Seguridad Global</text>
+  <text x="900" y="726" font-size="10" fill="#555">→ HTTPS + consultas parametrizadas</text>
+  <text x="900" y="742" font-size="10" fill="#555">→ Validación doble (frontend + backend)</text>
+
+  <!-- Footer -->
+  <text x="600" y="785" text-anchor="middle" font-size="11" fill="#999">TechStore - Diagrama de Arquitectura | CIB302 Taller de Plataformas Web | AIEP 2026</text>
+  <text x="600" y="802" text-anchor="middle" font-size="10" fill="#bbb">Alumno: Pablo Martín Hartwig</text>
+</svg>
